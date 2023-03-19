@@ -4,6 +4,8 @@ import * as dotenv from "dotenv";
 import cors from "cors";
 
 // ROUTE IMPORTS
+import CardRoutes from "./routes/card.routes.js";
+import UserRoutes from "./routes/user.routes.js";
 
 // CONFIG AND INITIALIZATION
 dotenv.config();
@@ -16,5 +18,8 @@ app.use(express.json({ limit: "50mb" }));
 app.get("/", async (req, res) => {
   res.status(200).send("API WORKING.");
 });
+
+app.use("/api/v1/cards", CardRoutes);
+app.use("/api/v1/user", UserRoutes);
 
 export default app;
