@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const vCardSchema = mongoose.Schema({
+  cardName: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -45,6 +49,10 @@ const vCardSchema = mongoose.Schema({
   website: {
     type: String,
     required: false,
+  },
+  url: {
+    type: String,
+    required: true,
   },
 });
 
